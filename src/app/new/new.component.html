@@ -4,4 +4,9 @@
 <div [innerHTML]="writeInDiv"></div>
 
 <input type="text" (input)="onInput($event)">
+
+<p>sameAsInput</p>
 <p>{{sameAsInput}}</p>
+
+<p>Two way:</p>
+<input type="text" [(ngModel)]="sameAsInput">
