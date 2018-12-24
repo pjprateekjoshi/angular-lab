@@ -7,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewComponent implements OnInit {
 
-  constructor() { }
-
+  isDisabled = false;
+  constructor() {
+    setTimeout(()=>{
+      this.isDisabled = !this.isDisabled
+    },3000)
+  }
   ngOnInit() {
   }
 
