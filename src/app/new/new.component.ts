@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class NewComponent implements OnInit {
 
   writeInDiv = "I'm property binding to implement String interpolation";
-  isDisabled = false;
+  lightStatus = "Light is off";
+  isDisabled = true;
+  sameAsInput = "Initial";
   constructor() {
     setTimeout(()=>{
       this.isDisabled = !this.isDisabled
@@ -17,4 +19,11 @@ export class NewComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(){
+    this.lightStatus = "Light is on!";
+  }
+
+  onInput(event:Event){
+    this.sameAsInput = (<HTMLInputElement>event.target).value;
+  }
 }
